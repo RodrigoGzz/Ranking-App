@@ -1,6 +1,6 @@
-# Ranking MVP
+# Ranking App
 
-Pequeño MVP para experimentar un ranking por enfrentamientos manuales.
+Pequeño App para experimentar un ranking por enfrentamientos manuales.
 
 ## Ejecutar
 
