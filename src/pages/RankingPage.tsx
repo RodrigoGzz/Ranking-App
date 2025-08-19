@@ -47,6 +47,10 @@ export default function RankingPage() {
     setHistory((h) => [...h, { winner, loser }])
   }
 
+  const onUndo = () => {
+    setHistory((h) => (h.length ? h.slice(0, -1) : h))
+  }
+
   return (
     <div className="container">
       <header className="header">
@@ -54,7 +58,13 @@ export default function RankingPage() {
   <small>Restantes aprox: {remaining}</small>
       </header>
       {nextPair ? (
-        <Matchup pair={nextPair} onPick={onPick} index={history.length} total={Infinity} />
+        <Matchup
+          pair={nextPair}
+          onPick={onPick}
+          index={history.length}
+          total={Infinity}
+          onUndo={history.length > 0 ? onUndo : undefined}
+        />
       ) : null}
     </div>
   )
